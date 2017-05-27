@@ -3,22 +3,56 @@
 <head>
   <meta charset="UTF-8">
   <title>Key Detection</title>
-  <script type="text/javascript" src="http://www.cornify.com/js/cornify.js"></script>
 </head>
-<body>
+
 <script>
 const pressed = [];
-const secretCode = 'zczczc';
+const secretCode = 'zxczxc';
 window.addEventListener('keyup', (e) => {
   console.log(e.key);
   pressed.push(e.key);
   pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length);
   if (pressed.join('').includes(secretCode)) {
-    console.log('DING DING!');
-    cornify_add();
+    console.log('Znasz tajny kod :O');
+    document.getElementById("niespodzianka").innerHTML="Znasz tajne hasło!";
   }
   console.log(pressed);
 });
 </script>
+<body>
+
+<div class="site">
+
+     <h1>Na tej stronie nic nie ma</h1>
+     <p id="niespodzianka"></p>
+</div>
+<style>
+       html {
+         box-sizing: border-box;
+         background:#D9CEB2;
+         font-family:'Arial';
+         font-size: 20px;
+         font-weight: 200;
+       }
+       body {
+           margin: 0;
+       }
+       h1 {
+           margin-top: 0;
+           text-align: center;
+       }
+       p {
+           margin-top: 0;
+           text-align: center;
+       }
+       .site {
+         max-width: 700px;
+         margin: 100px auto;
+         background:#D5DED9;
+         padding:40px;
+         text-align: justify;
+      }
+
+   </style>
 </body>
 </html>
